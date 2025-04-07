@@ -1,0 +1,50 @@
+<!-- 
+  Ryo Safadi
+  rrsafadi@ucsc.edu
+
+  Notes to Grader: None
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Draw a blue rectangle (canvas version)</title>
+  </head>
+
+  <body onload="main()">
+    <canvas id="example" width="400" height="400">
+      Please use a browser that supports "canvas"
+    </canvas>
+    <script src="asg0.js"></script>
+    <script src="../lib/cuon-matrix-cse160.js"></script>
+    <br />
+    <p>
+      v1: 
+      x <input type="text" id="v1x" /> 
+      y <input type="text" id="v1y" />
+    </p>
+    <p>
+      v2: 
+      x <input type="text" id="v2x" /> 
+      y <input type="text" id="v2y" />
+    </p>
+    <input type="button" value="Draw" onclick="handleDrawEvent()" />
+    <br />
+    <p>
+      Operation: 
+      <select name="operations" id="op-select">
+        <option value="add">Add</option>
+        <option value="sub">Subtract</option>
+        <option value="mul">Multiply</option>
+        <option value="div">Divide</option>
+        <option value="ang">Angle Between</option>
+        <option value="area">Area</option>
+        <option value="mag">Magnitude</option>
+        <option value="norm">Normalize</option>
+      </select>
+      Scalar: <input type="text" id="scalar" />
+    </p>
+    <input type="button" value="Draw" onclick="handleDrawOperationEvent()" />
+  </body>
+</html>
