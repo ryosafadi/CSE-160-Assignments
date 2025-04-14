@@ -6,21 +6,27 @@
   </head>
 
   <body onload="main()">
+    <h3>Awesomeness Points: Added an additional alpha slider, added diamond to shapes, and added lines to fill in the gaps during mouse drag</h3>
     <canvas id="webgl" width="400" height="400">
     Please use a browser that supports "canvas"
     </canvas>
+    <img src="asg1Drawing.jpg" alt="sketch" width="400" height="400">
+    <img src="Knight.png" alt="The Knight" width="400" height="400">
     <p>
       <input type="button" value="Clear Canvas" id="clearButton" />
+      <input type="button" value="Show The Knight" id="knightButton" />
     </p>
     <p>
       <input type="button" value="Points" id="pointButton" />
       <input type="button" value="Triangles" id="triButton" />
+      <input type="button" value="Diamonds" id="diaButton" />
       <input type="button" value="Circles" id="circleButton" />
     </p>
     <p>
       Red <input type="range" min="0" max="100" value="100" class="slider" id="redSlide" />
       Green <input type="range" min="0" max="100" value="100" class="slider" id="greenSlide" />
       Blue <input type="range" min="0" max="100" value="100" class="slider" id="blueSlide" />
+      Alpha <input type="range" min="0" max="100" value="100" class="slider" id="alphaSlide" />
     </p>
     <p>
       Shape Size <input type="range" min="5" max="40" value="5" class="slider" id="sizeSlide" />
@@ -32,7 +38,9 @@
     <script src="../lib/cuon-utils.js"></script>
     <script src="Point.js"></script>
     <script src="Triangle.js"></script>
+    <script src="Diamond.js"></script>
     <script src="Circle.js"></script>
-    <script src="ColoredPoints.js"></script>
+    <script src="Line.js"></script>
+    <script src="asg1.js"></script>
   </body>
 </html>
