@@ -9,10 +9,30 @@
     <canvas id="webgl" width="400" height="400">
     Please use a browser that supports "canvas"
     </canvas>
+    <p>
+      <input type="button" value="Clear Canvas" id="clearButton" />
+    </p>
+    <p>
+      <input type="button" value="Points" id="pointButton" />
+      <input type="button" value="Triangles" id="triButton" />
+      <input type="button" value="Circles" id="circleButton" />
+    </p>
+    <p>
+      Red <input type="range" min="0" max="100" value="100" class="slider" id="redSlide" />
+      Green <input type="range" min="0" max="100" value="100" class="slider" id="greenSlide" />
+      Blue <input type="range" min="0" max="100" value="100" class="slider" id="blueSlide" />
+    </p>
+    <p>
+      Shape Size <input type="range" min="5" max="40" value="5" class="slider" id="sizeSlide" />
+      (Circle) Segment Count <input type="range" min="10" max="30" value="10" class="slider" id="segmentSlide" />
+    </p>
 
     <script src="../lib/webgl-utils.js"></script>
     <script src="../lib/webgl-debug.js"></script>
     <script src="../lib/cuon-utils.js"></script>
+    <script src="Point.js"></script>
+    <script src="Triangle.js"></script>
+    <script src="Circle.js"></script>
     <script src="ColoredPoints.js"></script>
   </body>
 </html>
