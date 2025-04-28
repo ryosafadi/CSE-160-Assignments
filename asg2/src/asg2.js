@@ -19,7 +19,6 @@ var FSHADER_SOURCE = `
   }
 `;
 
-// Global variables
 let canvas;
 let gl;
 let a_Position;
@@ -75,12 +74,12 @@ let g_animation = true;
 function addActionsForHtmlUI() {
   document.getElementById('animOn').onclick = function() { g_animation = true; };
   document.getElementById('animOff').onclick = function() { g_animation = false; };
+  document.getElementById('cameraSlide').addEventListener('input', function() { g_globalAngleY = Number(this.value); renderScene(); });
   document.getElementById('headSlide').addEventListener('input', function() { g_headAngle = this.value; renderScene(); });
   document.getElementById('tailBaseSlide').addEventListener('input', function() { g_tailBaseAngleZ = this.value; renderScene(); });
   document.getElementById('tailLowerJointSlide').addEventListener('input', function() { g_tailLowerJointAngle = this.value; renderScene(); });
   document.getElementById('tailUpperJointSlide').addEventListener('input', function() { g_tailUpperJointAngle = this.value; renderScene(); });
 
-  // Mouse drag to rotate camera
   let isDragging = false;
   let lastX = -1, lastY = -1;
 
@@ -98,25 +97,24 @@ function addActionsForHtmlUI() {
       let deltaY = ev.clientY - lastY;
       g_globalAngleY += deltaX * 0.5;
       g_globalAngleX += deltaY * 0.5;
-      g_globalAngleX = Math.max(Math.min(g_globalAngleX, 90), -90); // clamp X rotation to [-90, 90]
+      g_globalAngleX = Math.max(Math.min(g_globalAngleX, 90), -90);
       lastX = ev.clientX;
       lastY = ev.clientY;
+      document.getElementById('cameraSlide').value = g_globalAngleY;
       renderScene();
     }
   };
 
-  // Mouse wheel to zoom
   canvas.addEventListener('wheel', function(ev) {
     if (ev.deltaY < 0) {
       g_globalZoom *= 1.05;
     } else {
       g_globalZoom /= 1.05;
     }
-    g_globalZoom = Math.min(Math.max(g_globalZoom, 0.1), 0.65); // clamp zoom
+    g_globalZoom = Math.min(Math.max(g_globalZoom, 0.1), 0.65);
     renderScene();
   });
 
-  // Shift + mouse down to dilate pupils
   canvas.addEventListener('mousedown', function(ev) {
     if (ev.shiftKey) {
       dialatePupils();
@@ -278,9 +276,9 @@ function renderScene() {
   tailLowerJoint.translate(0, 0.45, 0.05);
   tailLowerJoint.rotate(-g_tailLowerJointAngle, 1, 0, 0);
   let tailLowerJointMatrix = new Matrix4(tailLowerJoint);
-  tailLowerJoint.scale(0.1, 0.5, 0.1);
-  tailLowerJoint.translate(0, 0, -0.5);
-  drawCube(tailLowerJoint, [0.3, 0.3, 0.3, 1.0]);
+  tailLowerJointMatrix.scale(0.1, 0.5, 0.1);
+  tailLowerJointMatrix.translate(0, 0, -0.5);
+  drawCube(tailLowerJointMatrix, [0.3, 0.3, 0.3, 1.0]);
 
   let tailUpperJointMatrix = new Matrix4(tailLowerJointMatrix);
   tailUpperJointMatrix.translate(0, 0.45, 0);

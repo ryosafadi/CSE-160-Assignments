@@ -13,7 +13,7 @@
           <p>Shift+click to make the cat's pupils dilate.</p>
           <p>The upper portions of the cat's tail is a third-level joint.</p>
           <p>The cat's ears are triangular prisms (Non-cube primitive).</p>
-          <p>The only slider that has an effect while the animation is running is the "Tail Base Angle" slider.</p>
+          <p>The only joint slider that has an effect while the animation is running is the "Tail Base Angle" slider.</p>
       </details>
     </div>
     <canvas id="webgl" width="400" height="400">
@@ -24,6 +24,9 @@
       Animation:
       <button type="button" id="animOn">ON</button>
       <button type="button" id="animOff">OFF</button>
+    </p>
+    <p> 
+      Camera Angle <input type="range" min="-180" max="180" value="60" class="slider" id="cameraSlide" />
     </p>
     <p> 
       Head Angle <input type="range" min="-45" max="45" value="0" class="slider" id="headSlide" />
