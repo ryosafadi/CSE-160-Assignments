@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Virtual World</title>
+  </head>
+
+  <body onload="main()">
+    <div style="margin-bottom: 5px;">
+      <details id="notes" open>
+          <summary><strong>Notes for Graders</strong></summary>
+          <p>Wow! Points: I implemented mipmapping with trilinear filtering to reduce texture aliasing.</p>
+          <p>The world has a simple story in which there is a missing cat hidden in the world that the player can find.</p>
+          <p>I skipped adding/deleting blocks for this assignment.</p>
+      </details>
+    </div>
+    <canvas id="webgl" width="400" height="400">
+    Please use a browser that supports "canvas"
+    </canvas>
+    <p id="perfData"></p>
+    <p>
+      WASD to move, Q + E or Mouse to rotate <br>
+      Story: Missy is missing! See if you can find her!
+    </p>
+    <script src="../lib/webgl-utils.js"></script>
+    <script src="../lib/webgl-debug.js"></script>
+    <script src="../lib/cuon-utils.js"></script>
+    <script src="../lib/cuon-matrix-cse160.js"></script>
+    <script src="Camera.js"></script>
+    <script src="Triangle.js"></script>
+    <script src="Cube.js"></script>
+    <script src="TriPrism.js"></script>
+    <script src="asg3.js"></script>
+  </body>
+</html>
