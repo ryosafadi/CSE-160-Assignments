@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Lighting</title>
+  </head>
+
+  <body onload="main()">
+    <div style="margin-bottom: 5px;">
+      <details id="notes" open>
+          <summary><strong>Notes for Graders</strong></summary>
+          <p>Only the sphere has specular lighting, as per the professor's comment at the end of video "4.6 Add Lighting".</p>
+          <p>There is also a spot light. Both the point and spot lights can be turned on and off.</p>
+          <p>My blocky animal, the black cat, is included in the scene.</p>
+          <p>You can turn off the point light's animation to manually change its X value (Its Y and Z values can be changed with the sliders regardless).</p>
+      </details>
+    </div>
+    <canvas id="webgl" width="400" height="400">
+    Please use a browser that supports "canvas"
+    </canvas>
+    <p id="perfData"></p>
+    <p>
+      <button type="button" id="normalOn">Normal On</button>
+      <button type="button" id="normalOff">Normal Off</button>
+    </p>
+    <p>
+      <button type="button" id="pointLightOn">Point Light On</button>
+      <button type="button" id="pointLightOff">Point Light Off</button>
+    </p>
+    <p>
+      <button type="button" id="spotLightOn">Spot Light On</button>
+      <button type="button" id="spotLightOff">Spot Light Off</button>
+    </p>
+    <p>
+      <button type="button" id="lightAnimOn">Light Animation On</button>
+      <button type="button" id="lightAnimOff">Light Animation Off</button>
+    </p>
+    <p>
+      Light X<input type="range" min="-250" max="250" value="0" class="slider" id="lightX">
+      Light Y<input type="range" min="-250" max="250" value="0" class="slider" id="lightY">
+      Light Z<input type="range" min="-250" max="250" value="0" class="slider" id="lightZ">
+    </p>
+    <p>
+      Red <input type="range" min="0" max="100" value="100" class="slider" id="redSlide" />
+      Green <input type="range" min="0" max="100" value="100" class="slider" id="greenSlide" />
+      Blue <input type="range" min="0" max="100" value="100" class="slider" id="blueSlide" />
+    </p>
+    <p>
+      Click on the canvas to use mouse control (ESC to exit mouse control). WASD to move, Q + E or Mouse to rotate<br>
+    </p>
+    <script src="../lib/webgl-utils.js"></script>
+    <script src="../lib/webgl-debug.js"></script>
+    <script src="../lib/cuon-utils.js"></script>
+    <script src="../lib/cuon-matrix-cse160.js"></script>
+    <script src="Camera.js"></script>
+    <script src="Triangle.js"></script>
+    <script src="Cube.js"></script>
+    <script src="Sphere.js"></script>
+    <script src="TriPrism.js"></script>
+    <script src="asg4.js"></script>
+  </body>
+</html>
